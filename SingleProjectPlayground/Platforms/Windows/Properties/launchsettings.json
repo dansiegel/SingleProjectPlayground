@@ -1,0 +1,10 @@
+{
+	"profiles": {
+		"SingleProjectPlayground.Windows (Unpackaged)": {
+			"commandName": "Project"
+		},
+		"SingleProjectPlayground.Windows (Package)": {
+			"commandName": "MsixPackage"
+		}
+	}
+}

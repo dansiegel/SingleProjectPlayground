@@ -1,0 +1,10 @@
+{
+  "background_color": "#ffffff",
+  "description": "SingleProjectPlayground",
+  "display": "standalone",
+  "name": "SingleProjectPlayground",
+  "short_name": "SingleProjectPlayground",
+  "start_url": "/index.html",
+  "theme_color": "#ffffff",
+  "scope": "/"
+}
