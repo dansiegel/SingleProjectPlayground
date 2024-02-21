@@ -7,7 +7,7 @@
         HorizontalAlignment="Center"
         VerticalAlignment="Center">
     <TextBlock AutomationProperties.AutomationId="HelloTextBlock"
-          Text="Hello Uno Platform"
+          Text="Hello Single Project!!!"
           HorizontalAlignment="Center" />
   </StackPanel>
 </Page>

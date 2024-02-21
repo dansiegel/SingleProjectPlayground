@@ -23,7 +23,7 @@ public sealed partial class App : Application
 #if NET6_0_OR_GREATER && WINDOWS && !HAS_UNO
         MainWindow = new Window();
 #else
-        MainWindow = Microsoft.UI.Xaml.Window.Current;
+        MainWindow = Microsoft.UI.Xaml.Window.Current!;
 #endif
 
 #if DEBUG

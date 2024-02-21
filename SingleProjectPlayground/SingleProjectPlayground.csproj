@@ -1,62 +1,66 @@
 <Project Sdk="Uno.Sdk">
   <PropertyGroup>
-      <TargetFrameworks Condition="$([MSBuild]::IsOSPlatform('windows')) or '$(EnableWindowsTargeting)' == 'true'">$(TargetFrameworks);$(DotNetVersion)-windows10.0.19041</TargetFrameworks>  
-     <!--<TargetFrameworks>$(TargetFrameworks);$(DotNetVersion)-android;$(DotNetVersion)-ios;$(DotNetVersion)-maccatalyst;</TargetFrameworks>--> 
-    <!--<TargetFrameworks>$(TargetFrameworks);$(DotNetVersion)-skia</TargetFrameworks>-->
-    <!--<TargetFrameworks>$(TargetFrameworks);$(DotNetVersion)-browser</TargetFrameworks>-->
-    <!--<TargetFrameworks Condition="'$(OverrideTargetFramework)'!=''">$(OverrideTargetFramework)</TargetFrameworks>-->
+    <TargetFrameworks Condition="$([MSBuild]::IsOSPlatform('windows')) or '$(EnableWindowsTargeting)' == 'true'">$(TargetFrameworks);$(DotNetVersion)-windows10.0.19041</TargetFrameworks>  
+    <TargetFrameworks>$(TargetFrameworks);$(DotNetVersion)-android;$(DotNetVersion)-ios;$(DotNetVersion)-maccatalyst;</TargetFrameworks> 
+    <TargetFrameworks>$(TargetFrameworks);$(DotNetVersion)-skia</TargetFrameworks> 
+    <TargetFrameworks>$(TargetFrameworks);$(DotNetVersion)-browser</TargetFrameworks> 
+    <!-- <TargetFrameworks Condition="'$(OverrideTargetFramework)'!=''">$(OverrideTargetFramework)</TargetFrameworks> -->
 
     <SingleProject>true</SingleProject>
-
     <!-- Display name -->
     <ApplicationTitle>SingleProjectPlayground</ApplicationTitle>
     <!-- App Identifier -->
-    <ApplicationId>com.companyname.singleprojectplayground</ApplicationId>
+    <ApplicationId>uno.platform.singleprojectplayground</ApplicationId>
     <!-- Versions -->
     <ApplicationDisplayVersion>1.0</ApplicationDisplayVersion>
     <ApplicationVersion>1</ApplicationVersion>
 
-    <IsUnoHead>true</IsUnoHead>
+    <!-- <IsUnoHead>true</IsUnoHead> -->
     <OutputType>Exe</OutputType>
   </PropertyGroup>
 
   <ItemGroup>
-    <PackageReference Include="Uno.WinUI" />
-    <PackageReference Include="Uno.WinUI.Lottie" Condition="!$(TargetFramework.Contains('windows10'))" />
+    <PackageReference Include="Uno.WinUI" /> 
+    <PackageReference Include="Uno.WinUI.Lottie" Condition="!$(TargetFramework.Contains('windows10'))" /> 
     <PackageReference Include="Uno.WinUI.DevServer" Condition="'$(Configuration)'=='Debug' AND !$(TargetFramework.Contains('windows10'))" />
+    <PackageReference Include="SkiaSharp.Skottie" />
+    <PackageReference Include="SkiaSharp.Views.Uno.WinUI" />
     <PackageReference Include="Uno.Resizetizer" />
     <PackageReference Include="Microsoft.Extensions.Logging.Console" />
-    <PackageReference Include="Uno.UI.Adapter.Microsoft.Extensions.Logging" />
+    <PackageReference Include="Uno.UI.Adapter.Microsoft.Extensions.Logging" /> 
   </ItemGroup>
 
   <Choose>
     <When Condition="$([MSBuild]::GetTargetPlatformIdentifier('$(TargetFramework)')) == 'android'">
-      <ItemGroup>
+       <ItemGroup>
         <PackageReference Include="Uno.Extensions.Logging.OSLog" />
         <PackageReference Include="Xamarin.Google.Android.Material" />
         <PackageReference Include="Uno.UniversalImageLoader" />
-      </ItemGroup>
+      </ItemGroup> 
     </When>
     <When Condition="$([MSBuild]::GetTargetPlatformIdentifier('$(TargetFramework)')) == 'ios'">
-      <ItemGroup>
+       <ItemGroup>
         <PackageReference Include="Uno.Extensions.Logging.OSLog" />
-      </ItemGroup>
+      </ItemGroup> 
     </When>
     <When Condition="$([MSBuild]::GetTargetPlatformIdentifier('$(TargetFramework)')) == 'maccatalyst'">
-      <ItemGroup>
+       <ItemGroup>
         <PackageReference Include="Uno.Extensions.Logging.OSLog" />
-      </ItemGroup>
+      </ItemGroup> 
     </When>
     <When Condition="$([MSBuild]::GetTargetPlatformIdentifier('$(TargetFramework)')) == 'skia'">
+      <ItemGroup>
+        <PackageReference Include="Uno.WinUI.Skia.Gtk" />
+      </ItemGroup>
     </When>
     <When Condition="$([MSBuild]::GetTargetPlatformIdentifier('$(TargetFramework)')) == 'browser'">
-      <ItemGroup>
+       <ItemGroup>
         <PackageReference Include="Microsoft.Windows.Compatibility" />
         <PackageReference Include="Uno.Wasm.Bootstrap" />
         <PackageReference Include="Uno.Wasm.Bootstrap.DevServer" />
         <PackageReference Include="Uno.WinUI.WebAssembly" />
         <PackageReference Include="Uno.Extensions.Logging.WebAssembly.Console" />
-      </ItemGroup>
+      </ItemGroup> 
     </When>
     <When Condition="$(TargetFramework.Contains('windows10'))">
       <PropertyGroup>
