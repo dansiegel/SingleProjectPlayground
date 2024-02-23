@@ -8,16 +8,23 @@
     }
   },
   "profiles": {
-		"SingleProjectPlayground.Windows (Unpackaged)": {
-			"commandName": "Project"
+		"SingleProjectPlayground": {
+			"commandName": "Project",
+      "hotReloadEnabled": true
 		},
-		"SingleProjectPlayground.Windows (Package)": {
-			"commandName": "MsixPackage"
+		"Windows Unpackaged": {
+			"commandName": "Project",
+      "hotReloadEnabled": true
+		},
+		"Windows (Packaged)": {
+			"commandName": "MsixPackage",
+      "hotReloadEnabled": true
 		},
     "SingleProjectPlayground (Wasm)": {
       "commandName": "Project",
       "dotnetRunMessages": true,
       "launchBrowser": true,
+      "hotReloadEnabled": true,
       "applicationUrl": "http://localhost:5001",
       "inspectUri": "{wsProtocol}://{url.hostname}:{url.port}/_framework/debug/ws-proxy?browser={browserInspectUri}",
       "environmentVariables": {
@@ -26,6 +33,7 @@
     },
     "IIS Express": {
       "commandName": "IISExpress",
+      "hotReloadEnabled": true,
       "launchBrowser": true,
       "inspectUri": "{wsProtocol}://{url.hostname}:{url.port}/_framework/debug/ws-proxy?browser={browserInspectUri}",
       "environmentVariables": {
