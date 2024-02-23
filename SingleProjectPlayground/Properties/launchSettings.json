@@ -8,6 +8,12 @@
     }
   },
   "profiles": {
+		"SingleProjectPlayground.Windows (Unpackaged)": {
+			"commandName": "Project"
+		},
+		"SingleProjectPlayground.Windows (Package)": {
+			"commandName": "MsixPackage"
+		},
     "SingleProjectPlayground (Wasm)": {
       "commandName": "Project",
       "dotnetRunMessages": true,
@@ -25,6 +31,10 @@
       "environmentVariables": {
         "ASPNETCORE_ENVIRONMENT": "Development"
       }
+    },
+    "WSL": {
+      "commandName": "WSL2",
+      "distributionName": ""
     }
   }
 }
