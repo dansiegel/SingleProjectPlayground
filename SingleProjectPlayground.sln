@@ -10,7 +10,6 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution 
 		.editorconfig = .editorconfig
 		Directory.Build.props = Directory.Build.props
 		Directory.Build.targets = Directory.Build.targets
-		Directory.Packages.props = Directory.Packages.props
 		global.json = global.json
 	EndProjectSection
 EndProject
@@ -20,12 +19,16 @@ Global
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{C083D8C8-54B4-4F2E-AFFB-FFD6C26A34B8}.Debug|Any CPU.ActiveCfg = Debug|arm64
-		{C083D8C8-54B4-4F2E-AFFB-FFD6C26A34B8}.Debug|Any CPU.Build.0 = Debug|arm64
+		{C083D8C8-54B4-4F2E-AFFB-FFD6C26A34B8}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C083D8C8-54B4-4F2E-AFFB-FFD6C26A34B8}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C083D8C8-54B4-4F2E-AFFB-FFD6C26A34B8}.Debug|Any CPU.Deploy.0 = Debug|Any CPU
 		{C083D8C8-54B4-4F2E-AFFB-FFD6C26A34B8}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{C083D8C8-54B4-4F2E-AFFB-FFD6C26A34B8}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {16A7CE16-B4F0-46B3-9BD4-05FB1024DEEF}
 	EndGlobalSection
 EndGlobal
